@@ -1,0 +1,67 @@
+PROCEDURE dot_product(v1:array-of-FLOAT,v2:array-of-FLOAT,var ps:FLOAT;n:INTEGER)
+VAR
+    ps:FLOAT
+    i:intger
+BEGIN
+  FOR i FROM 1 TO n-1  DO
+   ps = ps + v1[i] * v2[i];  
+END
+ALGORITHM Dot product
+VAR
+   Set1 : ARRAY_OF INTEGER;
+    Set2 : ARRAY_OF INTEGER;
+    n:INTEGER
+BEGIN
+    read(n)
+   FOR i FROM 0 TO n-1  DO
+   {
+   read(set1[i])
+   }
+   FOR i FROM 0 TO n-1  DO{
+   read(set2[i]) 
+   }
+    dot_product(set1,set2,ps,n)
+    if(ps=0){
+        
+        write("set1 and set2 are orthogonal")
+    }
+    ELSE
+    write("set1 and set2 are orthogonal")
+END
+______________________
+
+
+___________________________________________________________________________
+FUNCTION dot_product(v1:array-of-FLOAT,v2:array-of-FLOAT,var ps:FLOAT;n:INTEGER) :FLOAT
+VAR
+   ps:FLOAT
+   i:intger
+BEGIN
+     FOR i FROM 1 TO n-1  DO
+   ps = ps + v1[i] * v2[i]; 
+    RETURN (ps) ;
+END
+ALGORITHM Dot product
+VAR
+product:intger
+   Set1 : ARRAY_OF INTEGER;
+    Set2 : ARRAY_OF INTEGER;
+    n:INTEGER
+BEGIN
+    read(n)
+   FOR i FROM 0 TO n-1  DO
+   {
+   read(set1[i])
+   }
+   FOR i FROM 0 TO n-1  DO{
+   read(set2[i]) 
+   }
+  
+    if(dot_product(set1,set2,ps,n)=0)
+    {
+        
+        write("set1 and set2 are orthogonal")
+    }
+    ELSE
+    write("set1 and set2 are not orthogonal")
+END
